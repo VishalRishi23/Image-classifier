@@ -31,7 +31,7 @@ os.chdir('C:\Windows\System32\ML_PATH')
 
 # In[ ]:
 
-
+#Compute the SIFT feature descriptors
 sift=cv.xfeatures2d.SIFT_create()
 a,des_cluster=sift.detectAndCompute(Xtrain[0],None)
 des_hist=[des_cluster]
@@ -47,7 +47,7 @@ des_hist=np.array(des_hist)
 
 # In[30]:
 
-
+#Clustering
 from sklearn.cluster import KMeans
 cluster=KMeans(800)
 cluster.fit(des_cluster)
