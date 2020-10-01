@@ -72,7 +72,7 @@ datagen.fit(Xtrain)
 
 # In[24]:
 
-
+#MobileNet network with pretrained weights
 base_model=tf.keras.applications.MobileNetV2(input_shape=[96,96,3],include_top=False,weights='imagenet')
 
 
