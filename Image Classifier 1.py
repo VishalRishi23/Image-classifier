@@ -132,7 +132,8 @@ model.compile(loss='sparse_categorical_crossentropy',optimizer='Adam',metrics=['
 
 # In[10]:
 
-#Learning rate range test
+#Learning rate range test is performed for different model parameters (dropout and weight decay). The plot between the training loss and epochs is plotted while the learning rate 
+#is continually varied. The optimal learning rate is one tength of the learning rate at which minimum occurs in the plot
 from keras_lr_finder import LRFinder
 lr_finder=LRFinder(model)
 outputs=lr_finder.find_generator(datagen.flow(Xtrain,ytrain,batch_size=32,shuffle=True),0.00001,10,validation_data=[Xval,yval],class_weight=a,epochs=4)
